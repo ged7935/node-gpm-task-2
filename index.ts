@@ -1,11 +1,19 @@
-import express from 'express';
-import { v4 as uuid } from 'uuid';
+import express, { NextFunction, Request, Response } from 'express';
+import { UserRouter } from './routes/users'
 
 const app = express();
 const PORT = 8000;
-app.get('/', (req, res) => res.send('Express + TypeScript Server'));
+
+app.set('x-powered-by', false);
+
+app.use(express.json());
+
+app.use('/users', UserRouter);
+
+app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
+  res.status(400).json({ error: err.message });
+});
+
 app.listen(PORT, () => {
-  console.log(process.env.WORTH)
-  console.log(uuid());
-  console.log(`⚡️[server]: Server is running at https://localhost:${PORT}`);
+  console.log(`[server]: Server is running at https://localhost:${PORT}`);
 });
