@@ -9,7 +9,7 @@ const patchSchema = Joi.object<Omit<User, 'id'>>({
 }).min(1);
 
 const postSchema = Joi.object<Omit<User, 'id'>>({
-    login: Joi.string().required().error(new Error('message')),
+    login: Joi.string().required(),
     password: Joi.string().regex(/[0-9]/).regex(/[A-Za-z]/).required(),
     age: Joi.number().min(4).max(130).required(),
     isDeleted: Joi.boolean().required()
