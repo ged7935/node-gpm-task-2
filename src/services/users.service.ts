@@ -1,5 +1,5 @@
 import { Service } from 'typedi';
-import UsersRepository from '../data-access/users.repository.ts';
+import UsersRepository from '../data-access/users.repository';
 import { User } from '../models/user';
 
 @Service()

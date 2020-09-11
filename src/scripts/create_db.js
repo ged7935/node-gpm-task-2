@@ -1,4 +1,3 @@
-// put this info in config?
 const client = 'pg';
 const connectionString = 'postgres://foyvmuee:xt6BO6gX_zB7wCqANcxVKCRSejLFUCju@lallah.db.elephantsql.com:5432/foyvmuee';
 

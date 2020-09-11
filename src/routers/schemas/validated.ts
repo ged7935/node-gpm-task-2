@@ -12,7 +12,7 @@ interface LimitUsersSchema extends ValidatedRequestSchema {
 };
 
 interface PutUserSchema extends ValidatedRequestSchema {
-    [ContainerTypes.Body]: Omit<User, 'id'>
+    [ContainerTypes.Body]: Omit<User, 'id | isDeleted'>
 };
 
 export { AddUserSchema, LimitUsersSchema, PutUserSchema};
