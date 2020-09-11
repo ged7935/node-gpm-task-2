@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc --project ./",
-    "start": "nodemon index.ts",
+    "start": "nodemon ./src/index.ts",
+    "createDb": "node ./src/scripts/create_db",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -31,6 +32,12 @@
     "@hapi/joi": "^17.1.1",
     "express": "^4.17.1",
     "express-joi-validation": "^4.0.4-beta.0",
+    "knex": "^0.21.5",
+    "pg": "^8.3.3",
+    "pg-hstore": "^2.3.3",
+    "reflect-metadata": "^0.1.13",
+    "sequelize": "^6.3.5",
+    "typedi": "^0.8.0",
     "uuid": "^8.3.0"
   }
 }

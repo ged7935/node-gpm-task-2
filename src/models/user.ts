@@ -1,7 +1,7 @@
-export default interface User {
-    id: string;
+export interface User {
+    id: number;
     login: string;
     password: string;
     age: number;
     isDeleted: boolean;
-};
+}
