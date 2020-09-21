@@ -1,5 +1,5 @@
 import Joi from '@hapi/joi';
-import { User } from '../../models/user';
+import { User } from '../../../models/user';
 
 const putSchema = Joi.object<Omit<User, 'id' | 'isDeleted'>>({
     login: Joi.string().required(),

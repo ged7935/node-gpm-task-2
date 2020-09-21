@@ -1,9 +1,9 @@
 import express from 'express';
 import UsersService from '../services/users.service';
 import { Container } from 'typedi';
-import { postSchema, putSchema, limitSchema } from './schemas/request';
+import { postSchema, putSchema, limitSchema } from './schemas/users/request';
 import { ValidatedRequest, createValidator } from 'express-joi-validation';
-import { AddUserSchema, PutUserSchema, LimitUsersSchema } from './schemas/validated';
+import { AddUserSchema, PutUserSchema, LimitUsersSchema } from './schemas/users/validated';
 
 const router = express.Router();
 const validator = createValidator();

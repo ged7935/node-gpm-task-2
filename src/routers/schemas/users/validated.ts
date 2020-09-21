@@ -1,5 +1,5 @@
 import { ContainerTypes, ValidatedRequestSchema } from 'express-joi-validation';
-import { User } from '../../models/user';
+import { User } from '../../../models/user';
 
 interface AddUserSchema extends ValidatedRequestSchema {
     [ContainerTypes.Body]: Omit<User, 'id' | 'isDeleted'>
