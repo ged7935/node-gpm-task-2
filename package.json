@@ -38,6 +38,7 @@
     "reflect-metadata": "^0.1.13",
     "sequelize": "^6.3.5",
     "typedi": "^0.8.0",
-    "uuid": "^8.3.0"
+    "uuid": "^8.3.0",
+    "winston": "^3.3.3"
   }
 }
