@@ -1,10 +1,14 @@
 import { Service, Inject } from 'typedi';
 import Knex from 'knex';
 import { User } from '../models/user';
+import Database from '../db.loader';
 
 @Service()
 class UsersRepository {
-    constructor(@Inject('db') private _db: Knex) { }
+    private _db: Knex;
+    constructor(private _database: Database) {
+        this._db = _database.instance;
+    }
 
     async getById(id: number): Promise<Omit<User, 'isDeleted'> | undefined> {
         return await this._db<User>('users').where('id', id).andWhere('is_deleted', false).first();

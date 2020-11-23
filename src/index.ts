@@ -4,7 +4,6 @@ import LoginRouter from './routers/login';
 import UserRouter from './routers/users';
 import GroupRouter from './routers/groups';
 import UserGroupRouter from './routers/usergroup';
-import loadDb from './db.loader';
 import jwt from 'jsonwebtoken';
 import cors from 'cors';
 
@@ -27,8 +26,6 @@ const validateToken = (req: Request, res: Response, next: NextFunction) => {
     next();
   });
 };
-
-loadDb();
 
 app.use('/login', LoginRouter);
 app.use('/users', validateToken, UserRouter);

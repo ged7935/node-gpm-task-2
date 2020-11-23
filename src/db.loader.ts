@@ -1,17 +1,14 @@
-import knex from 'knex';
-import Container from 'typedi';
+import { Container, Service } from 'typedi';
 import Knex from 'knex';
 
-const client: string = 'pg';
-const connectionString: string = 'postgres://foyvmuee:xt6BO6gX_zB7wCqANcxVKCRSejLFUCju@lallah.db.elephantsql.com:5432/foyvmuee';
-
-function createDatabase(): Knex {
-    return knex({
-        client: client,
-        connection: connectionString
-    });
+@Service()
+class Database {
+    public instance: Knex;
+    constructor() { 
+        this.instance = Knex({
+            client: process.env.DB_CLIENT,
+            connection: process.env.DB_CONNECTION_STRING
+        });
+    }
 }
-
-export default () => {
-    Container.set('db', createDatabase());    
-};
+export default Database;
