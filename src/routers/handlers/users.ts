@@ -1,8 +1,8 @@
-import { Request, response, Response } from "express";
+import { Request, Response } from "express";
 import { ValidatedRequest } from "express-joi-validation";
 import Container from "typedi";
-import UsersService from "../services/users.service";
-import { AddUserSchema, LimitUsersSchema, PutUserSchema } from "./schemas/users/validated";
+import UsersService from "../../services/users.service";
+import { AddUserSchema, LimitUsersSchema, PutUserSchema } from "../schemas/users/validated";
 
 const getById = async (req: Request, res: Response) => {
     const user = await Container.get(UsersService).getById(+req.params.id);

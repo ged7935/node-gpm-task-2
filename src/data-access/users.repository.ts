@@ -1,4 +1,4 @@
-import { Service, Inject } from 'typedi';
+import { Service } from 'typedi';
 import Knex from 'knex';
 import { User } from '../models/user';
 import Database from '../db.loader';
@@ -6,8 +6,8 @@ import Database from '../db.loader';
 @Service()
 class UsersRepository {
     private _db: Knex;
-    constructor(private _database: Database) {
-        this._db = _database.instance;
+    constructor(database: Database) {
+        this._db = database.instance;
     }
 
     async getById(id: number): Promise<Omit<User, 'isDeleted'> | undefined> {

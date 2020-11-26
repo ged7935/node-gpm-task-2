@@ -1,5 +1,5 @@
 import UsersService from '../../../services/users.service';
-import { create } from '../../../routers/handlers';
+import { create } from '../../../routers/handlers/users';
 import { User } from '../../../models/user';
 import { Container } from 'typedi';
 

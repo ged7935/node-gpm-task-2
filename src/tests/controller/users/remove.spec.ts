@@ -1,5 +1,5 @@
 import UsersService from '../../../services/users.service';
-import { remove } from '../../../routers/handlers';
+import { remove } from '../../../routers/handlers/users';
 import { Container } from 'typedi';
 
 jest.mock('../../../services/users.service');

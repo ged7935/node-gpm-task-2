@@ -2,7 +2,7 @@ import express, { Request, Response } from 'express';
 import { postSchema, putSchema, limitSchema } from './schemas/users/request';
 import { createValidator } from 'express-joi-validation';
 import handleError from './handlers/error';
-import { create, getById, limit, remove, update } from './handlers';
+import { create, getById, limit, remove, update } from './handlers/users';
 
 const router = express.Router();
 const validator = createValidator();

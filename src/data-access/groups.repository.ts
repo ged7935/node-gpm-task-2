@@ -1,10 +1,14 @@
-import { Service, Inject } from 'typedi';
+import { Service } from 'typedi';
 import Knex from 'knex';
 import { Group, Permission } from '../models/group';
+import Database from '../db.loader';
 
 @Service()
-class GroupsRepository {
-    constructor(@Inject('db') private _db: Knex) { }
+class GroupsRepository {    
+    private _db: Knex;
+    constructor(database: Database) {
+        this._db = database.instance;
+    }
 
     async getAll(): Promise<Group[]> {
         const groups =
